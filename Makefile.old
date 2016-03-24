@@ -1,0 +1,11 @@
+SRC = sqlite3secure.c
+CC = gcc
+CFLAGS = -DSQLITE_HAS_CODEC
+OBJ = $(SRC:.c=.o)
+OUT = libwxsqlite.a
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o $@
+$(OUT):$(OBJ)
+	ar rcs $(OUT) $(OBJ)
+clean:
+	rm -f $(OBJ) $(OUT)

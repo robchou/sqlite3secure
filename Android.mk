@@ -1,0 +1,13 @@
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := sqlite3secure.c
+
+LOCAL_MODULE := wxsqlite3
+
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/
+
+LOCAL_CFLAGS := -DSQLITE_HAS_CODEC
+
+include $(BUILD_STATIC_LIBRARY)
